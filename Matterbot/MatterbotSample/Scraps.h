@@ -10,22 +10,22 @@
 
 namespace lospi
 {
-	struct ChallengesCommand : ICommand {
-		explicit ChallengesCommand(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
+	struct scrapsCommand : ICommand {
+		explicit scrapsCommand(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
 		std::wstring get_name() override {
-			return L"challenges";
+			return L"scraps";
 		}
 
 		std::wstring get_help() override {
-			return L"`challenges [MESSAGE]`: `challenges` will respond with the md5 hash key of the [MESSAGE].";
+			return L"`scraps [MESSAGE]`: `scraps` will respond with the md5 hash key of the [MESSAGE].";
 		}
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override {
 
 			std::string comb_input = "hsoj";
-			//auto salt_length = 11;
-			//std::string password = "7aksm7";
+			//auto salt_length = 10;
+			//std::string password = "9gicdd";
 			//std::map<Md5Digest, std::string> lookup;
 			std::wstring md5_str;
 			//auto result=lookup.find;
@@ -58,7 +58,7 @@ namespace lospi
 			{
 				challenge_list.push_back(get_md5_from_str(str));
 			}
-			
+
 			// do the hash collisions here
 			for (const auto& cli : challenge_list)
 			{
