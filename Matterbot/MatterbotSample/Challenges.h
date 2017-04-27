@@ -24,18 +24,11 @@ namespace lospi
 			const std::wstring &user, const std::wstring &command_text) override {
 
 			std::string comb_input = "hsoj";
-			//auto salt_length = 11;
-			//std::string password = "7aksm7";
-			//std::map<Md5Digest, std::string> lookup;
 			std::wstring md5_str;
-			//auto result=lookup.find;
-			//Md5Digest hashinput;
 			std::vector <Md5Digest> challenge_list;
 			std::vector<std::string> answer_list;
 			std::wstringstream ss(command_text);
 			std::wstring str;
-
-			//ss = command_text;
 
 			if (lookup.empty())
 			{
@@ -49,7 +42,7 @@ namespace lospi
 				challenge_list.push_back(get_md5_from_str(str));
 			}
 			
-			// do the hash collisions here
+			// Check for hash collisions here
 			for (const auto& cli : challenge_list)
 			{
 				auto it = lookup.find(cli);
@@ -60,7 +53,7 @@ namespace lospi
 				}
 			}
 
-			// put the answers into a string for theTry
+			// Put the answers into a string for theTry
 			str = L"";
 			do
 			{
@@ -71,7 +64,7 @@ namespace lospi
 				answer_list.pop_back();
 			} while (!answer_list.empty());
 
-			// convert theAnswers to wstring and try the password list
+			// Convert theAnswers to wstring and try the password list
 			std::wstring theTry = L"rivestment try" + str;
 			bot->post_message(theTry);
 			_sleep(5000);
