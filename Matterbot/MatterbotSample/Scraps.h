@@ -65,7 +65,7 @@ namespace lospi
 			std::wstring theTry = L"rivestment try" + str;
 			bot->post_message(theTry);
 			_sleep(5000);
-			std::wstring challenge = L"rivestment challenge";
+			std::wstring challenge = L"rivestment challenge 150";
 			return challenge;
 
 		}
