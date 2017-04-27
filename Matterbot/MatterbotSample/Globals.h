@@ -22,7 +22,6 @@ namespace lospi
 				auto combo = c.next();
 				copy(password.begin(), password.end(), back_inserter(combo));
 				Md5Digest newhash = compute_md5(combo.data(), combo.size());
-				//std::wstring md5_str = get_str_from_md5(newhash);
 				lookup.emplace(newhash, std::string{ combo.begin(),combo.end() });
 			}
 		}
