@@ -24,18 +24,11 @@ namespace lospi
 			const std::wstring &user, const std::wstring &command_text) override {
 
 			std::string comb_input = "hsoj";
-			//auto salt_length = 11;
-			//std::string password = "7aksm7";
-			//std::map<Md5Digest, std::string> lookup;
 			std::wstring md5_str;
-			//auto result=lookup.find;
-			//Md5Digest hashinput;
 			std::vector <Md5Digest> challenge_list;
 			std::vector<std::string> answer_list;
 			std::wstringstream ss(command_text);
 			std::wstring str;
-
-			//ss = command_text;
 
 			if (lookup.empty())
 			{
@@ -66,8 +59,6 @@ namespace lospi
 			{
 				std::wstring answer;
 				answer = string_to_wstring(answer_list.back());
-				//copy(answer_list.back().begin(), answer_list.back().end(), back_inserter(answer));
-				//answer.append(string_to_wstring(passwd));
 				str += L" " + answer;
 				answer_list.pop_back();
 			} while (!answer_list.empty());
