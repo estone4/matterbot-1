@@ -23,8 +23,7 @@ namespace lospi
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override {
 
-			std::string comb_input = "hsoj";
-			std::wstring md5_str;
+			auto comb_input = "hsoj";
 			std::vector <Md5Digest> challenge_list;
 			std::vector<std::string> answer_list;
 			std::wstringstream ss(command_text);
@@ -46,7 +45,7 @@ namespace lospi
 				auto it = lookup.find(cli);
 				if (it != lookup.end())
 				{
-					std::string answer = it->second;
+					auto answer = it->second;
 					answer_list.push_back(answer);
 				}
 			}
@@ -62,10 +61,10 @@ namespace lospi
 			} while (!answer_list.empty());
 
 			// Convert theAnswers to wstring and try the password list
-			std::wstring theTry = L"rivestment try" + str;
+			auto theTry = L"rivestment try" + str;
 			bot->post_message(theTry);
 			_sleep(5000);
-			std::wstring challenge = L"rivestment challenge 100";
+			auto challenge = L"rivestment challenge 100";
 			return challenge;
 
 		}
