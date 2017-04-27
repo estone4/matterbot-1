@@ -13,8 +13,6 @@ namespace lospi
 
 	void build_table(int salt_length, std::string password)
 	{
-
-
 		for (int i = 0; i < salt_length; i++)
 		{
 			Combinator c("hsoj", i);
