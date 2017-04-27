@@ -59,7 +59,6 @@ namespace lospi
 			{
 				std::wstring answer;
 				copy(answer_list.back().begin(), answer_list.back().end(), back_inserter(answer));
-				//answer.append(string_to_wstring(passwd));
 				str += L" " + answer;
 				answer_list.pop_back();
 			} while (!answer_list.empty());
