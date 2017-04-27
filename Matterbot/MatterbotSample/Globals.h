@@ -8,13 +8,11 @@ namespace lospi
 {
 	std::map<Md5Digest, std::string> lookup;
 	std::string password = "7aksm7";
-	//auto level = 1;
-	auto salt_length = 13;
+	auto level = 3;
+	auto salt_length = level+10;
 
 	void build_table(int salt_length, std::string password)
 	{
-
-
 		for (int i = 0; i <= salt_length; i++)
 		{
 			Combinator c("hsoj", i);
