@@ -40,7 +40,7 @@ namespace lospi
 				challenge_list.push_back(get_md5_from_str(str));
 			}
 
-			// do the hash collisions here
+			// Check for hash collisions here
 			for (const auto& cli : challenge_list)
 			{
 				auto it = lookup.find(cli);
@@ -51,7 +51,7 @@ namespace lospi
 				}
 			}
 
-			// put the answers into a string for theTry
+			// Put the answers into a string for theTry
 			str = L"";
 			do
 			{
@@ -61,7 +61,7 @@ namespace lospi
 				answer_list.pop_back();
 			} while (!answer_list.empty());
 
-			// convert theAnswers to wstring and try the password list
+			// Convert theAnswers to wstring and try the password list
 			std::wstring theTry = L"rivestment try" + str;
 			bot->post_message(theTry);
 			_sleep(5000);
