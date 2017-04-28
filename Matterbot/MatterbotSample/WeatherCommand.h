@@ -14,23 +14,31 @@ namespace lospi
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override {
-			if (command_text == L"sunny") {
+			
+			// Monkey see, monkey do code. First interaction with C++.
+			if (command_text == L"sunny") 
+			{
 				is_raining = false;
 				return L"It's now sunny.";
 			}
-			else if (command_text == L"rain") {
+			else if (command_text == L"rain") 
+			{
 				is_raining = true;
 				return L"It's now raining.";
 			}
-			else if (command_text == L"report") {
-				if (is_raining) {
+			else if (command_text == L"report") 
+			{
+				if (is_raining) 
+				{
 					return L"Get yer umbrella!";
 				}
-				else {
+				else 
+				{
 					return L"Put yer haterblockers on.";
 				}
 			}
-			else {
+			else 
+			{
 				return L"WAT?!";
 			}
 		}
