@@ -12,12 +12,12 @@
 #include "StringLengthCommand.h"
 #include "ReverseCommand.h"
 #include "LowerCommand.h"
-#include "md5Utilities.h"
 #include "Rivestment.h"
 #include "Points.h"
 #include "Scraps.h"
 #include "Globals.h"
 #include "Challenges.h"
+//#include "md5Utilities.h"
 
 #define ERROR_SUCCESS 0
 #define ERROR_FAILURE -1
@@ -37,14 +37,14 @@ int main() {
     bot->set_logger(make_unique<ConsoleLogger>());
     bot->register_command(make_shared<EchoCommand>());
     bot->register_command(make_shared<ReverseCommand>(bot));
-	bot->register_command(make_shared<WeatherCommand>());
-	bot->register_command(make_shared<StringLengthCommand>(bot));
-	bot->register_command(make_shared<UpperCommand>(bot));
-	bot->register_command(make_shared<LowerCommand>(bot));
-	bot->register_command(make_shared<md5Command>(bot));
-	bot->register_command(make_shared<ChallengesCommand>(bot));
-	bot->register_command(make_shared<PointsCommand>(bot));
-	bot->register_command(make_shared<scrapsCommand>(bot));
+	  bot->register_command(make_shared<WeatherCommand>());
+	  bot->register_command(make_shared<StringLengthCommand>(bot));
+	  bot->register_command(make_shared<UpperCommand>(bot));
+	  bot->register_command(make_shared<LowerCommand>(bot));
+	  //bot->register_command(make_shared<md5Command>(bot));
+	  bot->register_command(make_shared<ChallengesCommand>(bot));
+	  bot->register_command(make_shared<PointsCommand>(bot));
+	  bot->register_command(make_shared<scrapsCommand>(bot));
     bot->post_message(welcome_message);
 
     wstring console;
