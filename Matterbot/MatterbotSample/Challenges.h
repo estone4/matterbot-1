@@ -24,7 +24,7 @@ namespace lospi
 			const std::wstring &user, const std::wstring &command_text) override {
 
 			std::string comb_input = "hsoj";
-			std::wstring md5_str;
+			//std::wstring md5_str;
 			std::vector <Md5Digest> challenge_list;
 			std::vector<std::string> answer_list;
 			std::wstringstream ss(command_text);

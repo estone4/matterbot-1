@@ -7,8 +7,13 @@
 namespace lospi
 {
 	std::map<Md5Digest, std::string> lookup;
-	std::string password = "rdqayh";
-	auto level = 4;
+	// Ensure password matches the password provided
+	// by rivestment or you will not generate the 
+	// correct hashes and cause and exception to be 
+	// raised when a match is not found.
+	// Error checking needs to be implemented.
+	std::string password = "rdqayh";	
+	auto level = 4;						
 	auto salt_length = level + 10;
 
 	void build_table(int salt_length, std::string password)
@@ -22,7 +27,7 @@ namespace lospi
 				auto combo = c.next();
 				copy(password.begin(), password.end(), back_inserter(combo));
 				Md5Digest newhash = compute_md5(combo.data(), combo.size());
-				std::wstring md5_str = get_str_from_md5(newhash);
+				//std::wstring md5_str = get_str_from_md5(newhash);
 				lookup.emplace(newhash, std::string{ combo.begin(),combo.end() });
 			}
 		}
