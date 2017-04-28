@@ -19,7 +19,6 @@ namespace lospi
 			bot->post_message(command_text);
 			auto len = command_text.length();
 			return L"Your string was " + std::to_wstring(len) + L" characters long";
-			
 		}
 	private:
 		std::shared_ptr<Matterbot> bot;
