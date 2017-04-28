@@ -12,12 +12,12 @@
 #include "StringLengthCommand.h"
 #include "ReverseCommand.h"
 #include "LowerCommand.h"
-#include "Rivestment.h"
 #include "Points.h"
 #include "Scraps.h"
 #include "Globals.h"
 #include "Challenges.h"
-//#include "md5Utilities.h"
+#include "md5Utilities.h"
+//#include "Rivestment.h"
 
 #define ERROR_SUCCESS 0
 #define ERROR_FAILURE -1
