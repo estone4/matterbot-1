@@ -24,34 +24,15 @@ namespace lospi
 			const std::wstring &user, const std::wstring &command_text) override {
 
 			std::string comb_input = "hsoj";
-			//auto salt_length = 11;
-			//std::string password = "7aksm7";
-			//std::map<Md5Digest, std::string> lookup;
 			std::wstring md5_str;
-			//auto result=lookup.find;
-			//Md5Digest hashinput;
 			std::vector <Md5Digest> challenge_list;
 			std::vector<std::string> answer_list;
 			std::wstringstream ss(command_text);
 			std::wstring str;
 
-			//ss = command_text;
-
 			if (lookup.empty())
 			{
-				for (int i = 0; i <= salt_length; i++)
-				{
-					Combinator c("hsoj", i);
-
-					while (c.has_next())
-					{
-						auto combo = c.next();
-						copy(password.begin(), password.end(), back_inserter(combo));
-						Md5Digest newhash = compute_md5(combo.data(), combo.size());
-						std::wstring md5_str = get_str_from_md5(newhash);
-						lookup.emplace(newhash, std::string{ combo.begin(),combo.end() });
-					}
-				}
+				build_table(salt_length, password);
 			}
 
 			while (std::getline(ss, str, L' '))
@@ -76,7 +57,6 @@ namespace lospi
 			{
 				std::wstring answer;
 				copy(answer_list.back().begin(), answer_list.back().end(), back_inserter(answer));
-				//answer.append(string_to_wstring(passwd));
 				str += L" " + answer;
 				answer_list.pop_back();
 			} while (!answer_list.empty());
