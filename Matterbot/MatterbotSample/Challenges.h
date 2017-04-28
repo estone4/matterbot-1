@@ -32,9 +32,7 @@ namespace lospi
 
 			if (lookup.empty())
 			{
-
 				build_table(salt_length, password);
-
 			}
 
 			while (std::getline(ss, str, L' '))
